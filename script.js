@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             evento.preventDefault();
             
             const taskId = evento.dataTransfer.getData('text/plain');
-            const draggedTask = document.querySelector(#${taskId});
+            const draggedTask = document.querySelector(`#${taskId}`);
 
             if (draggedTask) {
                 column.appendChild(draggedTask);
@@ -57,9 +57,11 @@ document.addEventListener('DOMContentLoaded', () => {
         allColumns.forEach(column => {
             const taskCount = column.querySelectorAll('.task').length;
             const countElement = column.querySelector('.task-count');
-            countElement.textContent = (${taskCount});
+            countElement.textContent = (`${taskCount}`);
+
         });
     }
 
     updateTaskCounts();
+
 });
